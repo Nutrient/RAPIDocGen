@@ -1,0 +1,19 @@
+{
+  "name": "rapidocgen",
+  "version": "1.0.0",
+  "description": "Restful API documenation generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/Nutrient/RAPIDocGen.git"
+  },
+  "author": "Nutrient",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "write-yaml": "^1.0.0"
+  }
+}
