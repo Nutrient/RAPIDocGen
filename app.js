@@ -90,7 +90,7 @@ const buildRaw = (rawData, name) => {
   param.name = 'body'
   param.required = (!rawData.__required || rawData.__required === true) ? true : false;
 
-  
+
   param.schema.$ref = param.schema.$ref.concat(name)
   createDefinition(swagger.definitions, name, rawData, typeof rawData)
 
@@ -198,7 +198,7 @@ const main = (() => {
     delete swagger.info.title
   input.item.forEach(path => {
     path.item.forEach(req => {
-      let subAux = req.request.url.path || ['']
+      let subAux = req.request.url.path || [' ']
       newPath = createPath(subAux);
       if (!swagger.paths[newPath])
         swagger.paths[newPath] = {}
