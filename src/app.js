@@ -192,5 +192,5 @@ exports.main = (() => {
 
     })
   })
-  yaml('RAPI_Docs.yml', swagger, err => {});
+  yaml(filename, swagger, err => {});
 });
