@@ -1,6 +1,33 @@
 
+# RAPIDocGen v1.0.1
 
-# DocGen V1.0.0
 
-Currently parameter paths will be written as they are V1.1.0 will write
-parameters as they are requested
+Simple script to transform your postman tests into a swagger.yml file
+
+
+##### Installation
+
+Using npm
+
+```
+$ npm install -g rapidocgen
+```
+
+##### Usage
+
+
+```
+ $ rapidocgen <filepath>
+```
+
+
+
+
+### Changelog
+
+
+
+
+#### v1.0.0
+
+> RAPIDocGen v1.0.0
