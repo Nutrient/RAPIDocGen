@@ -154,7 +154,7 @@ const createDefinition = (path, name, value) => {
 const main = (() => {
   if (input.info.description !== undefined)
     swagger.info.description = input.info.description;
-  if (input.info.title !== undefined)
+  if (input.info.name !== undefined)
     swagger.info.title = input.info.name;
 
   input.item.forEach(path => {
@@ -170,7 +170,7 @@ const main = (() => {
       method.operationId = req.name;
       if (req.request.header.length != 0)
         method.consumes = [req.request.header[0].value];
-      if (swagger.schemes.indexOf(req.request.url.protocol) === -1)
+      if (swagger.schemes.indexOf(req.request.url.protocol) === -1 && req.request.url.protocol != undefined)
         swagger.schemes.push(req.request.url.protocol)
       let name = `${subAux.join('_')}_${req.request.method}`
       if (req.request.body.mode === 'formdata')
