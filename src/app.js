@@ -152,7 +152,6 @@ const createDefinition = (path, name, value) => {
 
 
 exports.main = (() => {
-  console.log(process.argv);
   if (input.info.description !== undefined)
     swagger.info.description = input.info.description;
   if (input.info.name !== undefined)
