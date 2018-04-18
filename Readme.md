@@ -1,8 +1,8 @@
 
-# RAPIDocGen v1.0.2
+# RAPIDocGen v1.0.5
 
 
-Simple script to transform your postman tests collection v2.1 into a swagger.yml file
+Simple script to transform postman test collections v2.1 to a swagger file
 
 
 ##### Installation
@@ -17,24 +17,40 @@ $ npm install -g rapidocgen
 
 
 ```
- $ rapidocgen <filepath>
+ $ rapidocgen <filepath> [<outputPath>]
 ```
 
 #### <span style="color:red">Known Issues</span>
 
 
--  Only application/json & text/plain is parseable
+-  Only application/json & text/plain is parsable
 -  --help command is not implemented
--  Optional output path is not implemented
--  collection structure must follow Collection -> folders -> saved requests
+-  Collection structure must follow Collection -> folders -> saved requests
 
 
+### Guidelines
 
+To parse a variable path use postman's variables implementation like the following example
+
+![Postman variable path example](https://i.imgur.com/an9ihtV.png )
+
+Edit the collection to add the matching variables with their value so you can test your requests
+
+![Postman variable path example 2](https://i.imgur.com/kARJPmv.png)
+
+
+Path responses will use the postman saved responses to build path responses
+`If no responses are available default will be 200: 'ok'`
+
+![Imgur](https://i.imgur.com/A5BO9aX.png)
 
 
 ### Changelog
 
 
+#### v1.0.5
+> - Output path issue fixed, user can now specify path & file name, `Default is set to 'RAPI_Docs.yml'`
+> - Updated docs with variable params example & default response
 
 
 #### v1.0.0
