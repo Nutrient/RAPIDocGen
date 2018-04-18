@@ -13,6 +13,7 @@
     "type": "git",
     "url": "https://github.com/Nutrient/RAPIDocGen.git"
   },
+  "keywords": ["parser", "postman", "swagger", "yml", "documenation"],
   "preferGlobal": true,
   "author": "Nutrient",
   "license": "MIT",
