@@ -48,6 +48,11 @@ Path responses will use the postman saved responses to build path responses
 ### Changelog
 
 
+#### v1.1.2
+> - Fixed an issue where path variables wouldn't be parsed correctly into path parameters
+> - Script won't crash now if there is a request outside a folder, it won't parse it yet
+> - Modulirized code
+
 #### v1.0.5
 > - Output path issue fixed, user can now specify path & file name, `Default is set to 'RAPI_Docs.yml'`
 > - Updated docs with variable params example & default response
