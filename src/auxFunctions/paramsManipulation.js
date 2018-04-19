@@ -31,17 +31,17 @@ const buildRaw = (rawData, name, swagger) => {
 module.exports.generateParams = (body, name, swagger, method) => {
   switch (body.mode) {
     case 'formdata':
-      method.parameters = buildFormData(body.formdata);
+      method.parameters = method.parameters.concat(buildFormData(body.formdata));
       break;
     case 'raw':
       if (body.raw === ""){
-        method.parameters = undefined;
         break;
       }
-      method.parameters = buildRaw(body.raw, name, swagger);
+      method.parameters = method.parameters.concat(buildRaw(body.raw, name, swagger));
       break;
     default:
-      method.parameters = undefined;
+      break;
+
   };
 };
 

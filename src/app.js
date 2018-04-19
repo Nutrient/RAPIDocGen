@@ -28,12 +28,13 @@ exports.main = (() => {
     path.item.forEach(req => {
       let method = JSON.parse(path_template);
       let subAux = req.request.url.path || [' '];
-      let newPath = createPath(subAux, swagger);
+      let newPath = createPath(subAux, method);
       let name = `${subAux.join('_')}_${req.request.method}`;
 
       method.tags = [path.name];
       method.summary = req.request.description;
       method.operationId = req.name;
+
 
       if (!swagger.paths[newPath])
         swagger.paths[newPath] = {};
@@ -51,7 +52,7 @@ exports.main = (() => {
       generateParams(req.request.body, name, swagger, method);
       generateResponses(method.responses, req.response, swagger);
 
-      if (method.parameters === undefined)
+      if (method.parameters.length === 0)
         delete method.parameters;
       if (method.consumes.length === 0)
         delete method.consumes;
