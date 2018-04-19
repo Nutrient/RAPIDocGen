@@ -1,6 +1,6 @@
 {
   "name": "rapidocgen",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Restful API documenation generator",
   "main": "./src/app.js",
   "scripts": {
@@ -13,7 +13,13 @@
     "type": "git",
     "url": "https://github.com/Nutrient/RAPIDocGen.git"
   },
-  "keywords": ["parser", "postman", "swagger", "yml", "documenation"],
+  "keywords": [
+    "parser",
+    "postman",
+    "swagger",
+    "yml",
+    "documenation"
+  ],
   "preferGlobal": true,
   "author": "Nutrient",
   "license": "MIT",
