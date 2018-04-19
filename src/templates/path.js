@@ -1,4 +1,4 @@
-module.exports.template = JSON.stringify({
+module.exports = JSON.stringify({
   'tags': [],
   'summary': '',
   'description': '',
