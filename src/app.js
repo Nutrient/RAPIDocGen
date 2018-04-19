@@ -24,13 +24,12 @@ exports.main = (() => {
     swagger.info.title = input.info.name;
 
   input.item.forEach(path => {
+    if(path.item !== undefined)
     path.item.forEach(req => {
       let method = JSON.parse(path_template);
       let subAux = req.request.url.path || [' '];
       let newPath = createPath(subAux, swagger);
       let name = `${subAux.join('_')}_${req.request.method}`;
-
-
 
       method.tags = [path.name];
       method.summary = req.request.description;
