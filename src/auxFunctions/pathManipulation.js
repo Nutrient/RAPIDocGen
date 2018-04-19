@@ -19,5 +19,5 @@ module.exports.createPath = (path, method) => {
     if (subPath !== '')
       newPath = `${newPath}/${subPath}`
   })
-  return newPath.split('{{').join('');
+  return newPath.split('{{').join('{').split('}}').join('}');
 };
