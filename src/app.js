@@ -40,7 +40,7 @@ exports.main = (() => {
         swagger.paths[newPath] = {};
       if (req.request.header.length != 0)
         req.request.header.forEach(header => {
-          if(header.key === 'Content-Type') {
+          if(header.key === 'Accept') {
             method.consumes.push(header.value);
           }
         })
