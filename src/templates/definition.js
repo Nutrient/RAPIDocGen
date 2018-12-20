@@ -1,6 +1,6 @@
 module.exports = JSON.stringify({
-  'type': '',
-  'properties': {
+    'type': '',
+    'properties': {
 
-  }
+    }
 });

@@ -1,0 +1,17 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "impliedStrict": true
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "no-tabs": 0,
+        "semi": ["error", "always"],
+        "no-var": ["error", "always"],
+        "prefer-const": ["error", "always"]
+    },
+    "env": {
+        "node": true
+    }
+}
