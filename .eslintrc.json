@@ -5,11 +5,14 @@
         "impliedStrict": true
     },
     "rules": {
-        "indent": ["error", 4],
+        "indent": ["error", "tab"],
         "no-tabs": 0,
         "semi": ["error", "always"],
-        "no-var": ["error", "always"],
-        "prefer-const": ["error", "always"]
+        "no-var": 0,
+        "prefer-const": ["error", {
+        	"destructuring": "any",
+        	"ignoreReadBeforeAssign": false
+		}]
     },
     "env": {
         "node": true

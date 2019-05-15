@@ -1,6 +1,6 @@
 module.exports = JSON.stringify({
-    'in': '',
-    'name': '',
-    'required': '',
-    'type': 'string'
+	'in': '',
+	'name': '',
+	'required': '',
+	'type': 'string'
 });
