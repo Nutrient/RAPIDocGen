@@ -52,6 +52,7 @@ Request responses will use postman's to build example responses'
 > - Script will now parse urlencoded body
 > - Fixed an issue where $ref paths would have spaces in between, causing yml errors
 > - Nested objects wont destroy response objects now (Will keep an eye on this one)
+> - IMPORTANT: Currently the script is unable to parse multiple same response code, if there are any, response objects will be created and only the last will be shown automatically
 
 #### v1.1.2
 > - Fixed an issue where path variables wouldn't be parsed correctly into path parameters
