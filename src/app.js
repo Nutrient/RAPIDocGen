@@ -15,7 +15,9 @@ const generateResponses = require('./auxFunctions/paramsManipulation').generateR
 const input = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 const output = process.argv[3] || 'RAPI_Docs.yml';
 
+// TODO when the export has folders inside folders, differ from request and another set of looped folders
 
+// TODO following with prev todo, add root folder requests to json
 exports.main = (() => {
 	const swagger = JSON.parse(swagger_template);
 	if (input.info.description !== undefined)
@@ -46,7 +48,7 @@ exports.main = (() => {
 					});
 				if (swagger.schemes.indexOf(req.request.url.protocol) === -1 && req.request.url.protocol != undefined)
 					swagger.schemes.push(req.request.url.protocol);
-				if (req.request.body.mode === 'formdata')
+				if (req.request.body != undefined && req.request.body.mode === 'formdata')
 					method.consumes.push('multipart/form-data');
 
 				generateParams(req.request.body, name, swagger, method);

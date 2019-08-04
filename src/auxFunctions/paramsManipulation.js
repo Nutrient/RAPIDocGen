@@ -22,10 +22,28 @@ const buildRaw = (rawData, name, swagger) => {
 	param.name = 'body';
 	param.required = (!rawData.__required || rawData.__required === true) ? true : false;
 	delete rawData.__required;
-	param.schema.$ref = param.schema.$ref.concat(encodeURIComponent(name));
-	createDefinition(swagger.definitions, encodeURIComponent(name), rawData);
+	param.schema.$ref = param.schema.$ref.concat(name).replace(/\s/g, '');
+	createDefinition(swagger.definitions, name, rawData);
 	params.push(param);
 	return params;
+};
+
+const buildUrlEncoded = (urlencoded, name, swagger) => {
+	const params = [];
+	const param = JSON.parse(body_template);
+	param.in = 'body';
+	param.name = 'body';
+	param.required = (!urlencoded.__required || urlencoded.__required === true) ? true : false;
+	delete urlencoded.__required;
+	const itemValues = {};
+	for (item of urlencoded) {
+		itemValues[item.key] = item.value;
+	}
+	param.schema.$ref = param.schema.$ref.concat(name).replace(/\s/g, '');
+	createDefinition(swagger.definitions, name, itemValues);
+	params.push(param);
+	return params;
+
 };
 
 module.exports.generateParams = (body, name, swagger, method) => {
@@ -38,6 +56,9 @@ module.exports.generateParams = (body, name, swagger, method) => {
 			break;
 		}
 		method.parameters = method.parameters.concat(buildRaw(body.raw, name, swagger));
+		break;
+	case 'urlencoded':		
+		method.parameters = method.parameters.concat(buildUrlEncoded(body.urlencoded, name, swagger));
 		break;
 	default:
 		break;
@@ -67,19 +88,19 @@ module.exports.generateResponses = (method, responses, swagger) => {
 					'schema': {
 						'type': 'array',
 						'items': {
-							'$ref': `#/definitions/${encodeURIComponent(response.name)}_resp`
+							'$ref': `#/definitions/${response.name}_resp`.replace(/\s/g, '')
 						}
 					}
 				};
-				createDefinition(swagger.definitions, `${response.name}_resp`, body[0]);
+				createDefinition(swagger.definitions, `${response.name}_resp`.replace(/\s/g, ''), body[0]);
 			} else {
 				method[response.code] = {
 					'description': response.status,
 					'schema': {
-						'$ref': `#/definitions/${encodeURIComponent(response.name)}_resp`
+						'$ref': `#/definitions/${response.name}_resp`.replace(/\s/g, '')
 					}
 				};
-				createDefinition(swagger.definitions, `${response.name}_resp`, body);
+				createDefinition(swagger.definitions, `${response.name}_resp`.replace(/\s/g, ''), body);
 			}
 		});
 };

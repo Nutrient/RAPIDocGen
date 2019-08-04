@@ -30,7 +30,7 @@ $ npm install -g rapidocgen
 
 ### Guidelines
 
-To parse a variable path use postman's variables implementation like the following example
+To parse a variable path use postman's as the following example
 
 ![Postman variable path example](https://i.imgur.com/an9ihtV.png )
 
@@ -39,7 +39,7 @@ Edit the collection to add the matching variables with their value so you can te
 ![Postman variable path example 2](https://i.imgur.com/kARJPmv.png)
 
 
-Path responses will use the postman saved responses to build path responses
+Request responses will use postman's to build example responses'
 `If no responses are available default will be 200: 'ok'`
 
 ![Imgur](https://i.imgur.com/A5BO9aX.png)
@@ -47,6 +47,11 @@ Path responses will use the postman saved responses to build path responses
 
 ### Changelog
 
+#### v1.2.0
+> - RAPIDocGen abbreviation command added, rdg now available
+> - Script will now parse urlencoded body
+> - Fixed an issue where $ref paths would have spaces in between, causing yml errors
+> - Nested objects wont destroy response objects now (Will keep an eye on this one)
 
 #### v1.1.2
 > - Fixed an issue where path variables wouldn't be parsed correctly into path parameters
