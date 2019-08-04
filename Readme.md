@@ -1,5 +1,5 @@
 
-# RAPIDocGen v1.1.4
+# RAPIDocGen v1.2.0
 
 
 Simple script to transform postman test collections v2.1 to a swagger file
