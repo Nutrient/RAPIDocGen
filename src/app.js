@@ -70,4 +70,5 @@ exports.main = (() => {
 			});
 	});
 	yaml(output, swagger, (err) => {});
+	console.log(`Successfully generated ${output}`);
 });

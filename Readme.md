@@ -1,5 +1,5 @@
 
-# RAPIDocGen v1.2.0
+# RAPIDocGen v1.2.1
 
 
 Simple script to transform postman test collections v2.1 to a swagger file
@@ -18,6 +18,7 @@ $ npm install -g rapidocgen
 
 ```
  $ rapidocgen <filepath> [<outputPath>]
+ $ rdg <filepath> [<outputPath>]
 ```
 
 #### <span style="color:red">Known Issues</span>
@@ -46,6 +47,10 @@ Request responses will use postman's to build example responses'
 
 
 ### Changelog
+
+#### v1.2.1
+> - Fixed issue with requests without body that caused script to abort (sorry for the inconvenience)
+> - Added feedback when the command terminates successfully
 
 #### v1.2.0
 > - RAPIDocGen abbreviation command added, rdg now available

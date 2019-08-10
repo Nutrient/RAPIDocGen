@@ -47,6 +47,9 @@ const buildUrlEncoded = (urlencoded, name, swagger) => {
 };
 
 module.exports.generateParams = (body, name, swagger, method) => {
+	if(body === null || body === undefined){
+		return;
+	}
 	switch (body.mode) {
 	case 'formdata':
 		method.parameters = method.parameters.concat(buildFormData(body.formdata));
